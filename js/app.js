@@ -65,5 +65,23 @@ function() {
 }
 )
 
+const getAnswer = () => {
+let ans;
+allInputs.forEach(
+    (inputEl) => {
+        if (inputEl.checked) {
+            ans = inputEl.value;
+        }
+    }
+)
+return ans;
+}
 
+const reset = () => {
+allInputs.forEach(
+    (inputEl) => {
+        inputEl.checked = false;
+    }
+)
+}
 
