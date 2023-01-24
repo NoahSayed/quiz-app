@@ -31,6 +31,24 @@ const quizData = [{
     correct: "b",
 }
 ];
+let index = 0;
+let correct = 0,
+incorrect = 0,
+total = quizData.length;
+let questionBox = document.getElementById("questionBox");
+let allInputs = document.querySelectorAll("input[type='radio']")
+const loadQuestion = () => {
+if (total === index) {
+    return quizEnd()
+}
+reset()
+const data = quizData[index]
+questionBox.innerHTML = `${index + 1}) ${data.question}`
+allInputs[0].nextElementSibling.innerText = data.a
+allInputs[1].nextElementSibling.innerText = data.b
+allInputs[2].nextElementSibling.innerText = data.c
+allInputs[3].nextElementSibling.innerText = data.d
+}
 
 
 
