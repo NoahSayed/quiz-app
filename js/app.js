@@ -50,6 +50,20 @@ allInputs[2].nextElementSibling.innerText = data.c
 allInputs[3].nextElementSibling.innerText = data.d
 }
 
+document.querySelector("#submit").addEventListener(
+"click",
+function() {
+    const data = quizData[index]
+    const ans = getAnswer()
+    if (ans === data.correct) {
+        correct++;
+    } else {
+        incorrect++;
+    }
+    index++;
+    loadQuestion()
+}
+)
 
 
 
